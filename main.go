@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/nikosEfthias/FindShiftedNumbers/lib"
 	"math"
-	"runtime"
 	"strconv"
 	"time"
+
+	"github.com/nikosEfthias/FindShiftedNumbers/lib"
 )
 
 var limiter chan bool
@@ -17,7 +17,7 @@ func main() {
 	fmt.Printf("\x1B[2J")
 	go func() {
 		for {
-			fmt.Printf("\x1B[0H (%d)=> currentNum(%d)", runtime.NumGoroutine(), counter)
+			fmt.Printf("\x1B[0H (%d)=> currentNum(%d)", len(limiter), counter)
 			time.Sleep(time.Millisecond * 5e2)
 		}
 	}()
